@@ -1,9 +1,22 @@
 {% extends 'base.html' %}
 
 {% block body  %}
-<h1>
-    Welcome to Django Project with Relational Database 
-</h1>
+
+<div class="card">
+    {% for quote in object_list %}
+    <div class="card-header bg-info">
+      {{ quote.quote_category.title }}
+    </div>
+    
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{quote.quote}}</p>
+            <footer class="blockquote-footer font-weight-bold ">{{ quote.Author }}</cite></footer>
+          </blockquote>
+      </div>
+   
+    {% endfor %}
+</div>
 
 
 {% endblock %}
